@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -15,6 +17,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PingPong extends Application {
+
+    public static int score = 0;
+
+
     @Override
     public void start(Stage stage) throws IOException {
         Group root = new Group();
@@ -47,6 +53,22 @@ public class PingPong extends Application {
         text.setX((scene.getWidth() / 2) - 80);
         text.setY(scene.getHeight() - scene.getHeight() + 50);
         text.setVisible(true);
+
+        scene.setOnMouseMoved(mouseEvent -> {
+            player.setY(mouseEvent.getSceneY() - (player.getHeight() / 2));
+        });
+
+        scene.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.W){
+                player.setY(player.getY() - 30);
+            }
+        });
+
+        scene.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.S){
+                player.setY(player.getY() + 30);
+            }
+        });
 
         root.getChildren().addAll(player, enemy, ball, text);
 
