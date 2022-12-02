@@ -18,10 +18,10 @@ public class Enemy {
 
     public static void enemyMove(){
 
-        if (enemy.getY() < ball.getCenterY()) {
+        if (enemy.getY() + 10< ball.getCenterY()) {
             enemy.setY(enemy.getY() + enemySpeed);
         }
-        if (enemy.getY() > ball.getCenterY()) {
+        if (enemy.getY() + 10 > ball.getCenterY()) {
             enemy.setY(enemy.getY() - enemySpeed);
         }
 

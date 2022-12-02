@@ -19,10 +19,15 @@ public class Ball {
     public static void respawnBall(){
         ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
+
+        ballSpeedX = 3;
+        ballSpeedY = 1;
+
     }
 
     public static void checkBallPosition(){
 
+        //score
         if (ball.getCenterX() < 0){
             playerScore++;
             playerScoreText.setText("Player Score : " + playerScore);
@@ -35,24 +40,45 @@ public class Ball {
             respawnBall();
         }
 
+        //player hit
         if(ball.getCenterX() >= gameWindow.getWidth() - player.getWidth() - gap){
             if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getY() + player.getHeight()){
+
                 ballSpeedX = -ballSpeedX;
-                ballSpeedY = +ballSpeedY;
+
+
+                if(ball.getCenterY() >= player.getY() + (player.getHeight() / 2) - 15 && ball.getCenterY() <= player.getY() + player.getHeight()/2 + 15){
+                    ballSpeedX = -ballSpeedX - 2;
             }
-            /*if(ball.getCenterY() >= player.getY() + (player.getHeight() / 2) - 10 && ball.getCenterY() <= player.getY() + player.getHeight()/2 + 10){
+                if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getHeight() / 2){
+                    ballSpeedY = -ballSpeedY - 1;
+                }
+                if(ball.getCenterY() >= player.getHeight() / 2 && ball.getCenterY() <= player.getHeight()){
+                    ballSpeedY = ballSpeedY + 1;
+                }
+            }
+        }
+        //enemy hit
+        if(ball.getCenterX() <= enemy.getWidth() + gap) {
+            if (ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getY() + player.getHeight()) {
+
                 ballSpeedX = -ballSpeedX;
-            }*/
+
+
+                if (ball.getCenterY() >= enemy.getY() + (enemy.getHeight() / 2) - 15 && ball.getCenterY() <= enemy.getY() + enemy.getHeight() / 2 + 15) {
+                    ballSpeedX = -ballSpeedX - 2;
+                }
+                if(ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getHeight() / 2){
+                    ballSpeedY = -ballSpeedY - 1;
+                }
+                if(ball.getCenterY() >= enemy.getHeight() / 2 && ball.getCenterY() <= enemy.getHeight()){
+                    ballSpeedY = ballSpeedY + 1;
+                }
+            }
         }
 
-        if(ball.getCenterX() <= enemy.getWidth() + gap){
-            if(ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getY() + enemy.getHeight()){
-                ballSpeedX = -ballSpeedX;
-                ballSpeedY = +ballSpeedY;
-            }
-        }
-
-        if (ball.getCenterY() == gameWindow.getHeight() || ball.getCenterY() == 0) {
+        //ground hit
+        if (ball.getCenterY() >= gameWindow.getHeight() || ball.getCenterY() == 0) {
             ballSpeedY = -ballSpeedY;
 
         }

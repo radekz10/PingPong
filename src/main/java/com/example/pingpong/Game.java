@@ -23,10 +23,10 @@ public class Game {
 
     public static int gap = 5;
 
-    public static int ballSpeedX = 2;
-    public static int ballSpeedY = 2;
+    public static double ballSpeedX = 5;
+    public static double ballSpeedY = 1;
 
-    public static double enemySpeed = 1.5;
+    public static double enemySpeed = 1;
 
     public static int maxScore = 5;
 
