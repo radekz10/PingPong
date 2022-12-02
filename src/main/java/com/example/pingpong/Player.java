@@ -15,6 +15,8 @@ public class Player {
         player.setY((gameWindow.getHeight() / 2) - (player.getHeight() / 2));
         player.setArcWidth(50.0);
         player.setArcHeight(20.0);
+        player.setStroke(Color.CYAN);
+        player.setStrokeWidth(3);
 
         player.setFill(Color.WHITE);
     }

@@ -14,6 +14,8 @@ public class Enemy {
         enemy.setY((gameWindow.getHeight() / 2) - (enemy.getHeight() / 2));
         enemy.setArcWidth(50.0);
         enemy.setArcHeight(20.0);
+        enemy.setStroke(Color.CYAN);
+        enemy.setStrokeWidth(3);
 
         enemy.setFill(Color.WHITE);
     }

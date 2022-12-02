@@ -46,13 +46,13 @@ public class Ball {
                 ballSpeedX = -ballSpeedX;
             }
             if(ball.getCenterY() >= player.getY() + (player.getHeight() / 2) - 15 && ball.getCenterY() <= player.getY() + player.getHeight()/2 + 15){
-                ballSpeedX = -ballSpeedX - 1.3;
+                ballSpeedX = ballSpeedX - 1.3;
             }
             if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getHeight() / 2){
                 ballSpeedY = ballSpeedY + 1;
             }
             if(ball.getCenterY() >= player.getHeight() / 2 && ball.getCenterY() <= player.getHeight()){
-                ballSpeedY = -ballSpeedY + 1;
+                ballSpeedY = ballSpeedY - 1;
             }
         }
         //enemy hit
@@ -61,19 +61,19 @@ public class Ball {
                 ballSpeedX = -ballSpeedX;
             }
             if (ball.getCenterY() >= enemy.getY() + (enemy.getHeight() / 2) - 15 && ball.getCenterY() <= enemy.getY() + enemy.getHeight() / 2 + 15) {
-                ballSpeedX = -ballSpeedX - 1.3;
+                ballSpeedX = ballSpeedX - 1.3;
             }
             if(ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getHeight() / 2){
                 ballSpeedY = ballSpeedY + 1;
             }
             if(ball.getCenterY() >= enemy.getHeight() / 2 && ball.getCenterY() <= enemy.getHeight()){
-                ballSpeedY = -ballSpeedY + 1;
+                ballSpeedY = ballSpeedY - 1;
             }
 
         }
 
         //ground hit
-        if (ball.getCenterY() >= gameWindow.getHeight() || ball.getCenterY() == 0) {
+        if (ball.getCenterY() == gameWindow.getHeight() || ball.getCenterY() == 0) {
             ballSpeedY = -ballSpeedY;
 
         }
