@@ -29,10 +29,10 @@ public class GameText {
 
     public static void drawStartText(){
         startText = new Text();
-        startText.setText("PRESS SPACE TO PLAY!");
+        startText.setText("P - PAUSE GAME | PRESS SPACE TO PLAY! ");
         startText.setFont(Font.font("Impact", 30));
         startText.setFill(Color.ORANGE);
-        startText.setX((gameWindow.getWidth() / 2) + 10);
+        startText.setX((gameWindow.getWidth() / 2) - 195);
         startText.setY((gameWindow.getHeight() - 20));
         startText.setVisible(true);
 
