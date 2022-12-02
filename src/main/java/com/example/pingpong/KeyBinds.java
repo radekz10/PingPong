@@ -1,7 +1,7 @@
 package com.example.pingpong;
-import javafx.scene.input.KeyCode;
 
-import static com.example.pingpong.PingPong.*;
+import javafx.scene.input.KeyCode;
+import static com.example.pingpong.Game.*;
 
 public class KeyBinds{
 
@@ -40,7 +40,12 @@ public class KeyBinds{
     public static void keyBindingPause(){
         gameWindow.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.P){
-                started = false;
+                pauseText.setVisible(true);
+                gameLoop.pause();
+            }
+            if (keyEvent.getCode() == KeyCode.SPACE){
+                pauseText.setVisible(false);
+                gameLoop.play();
             }
         });
 

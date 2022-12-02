@@ -3,9 +3,9 @@ package com.example.pingpong;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import static com.example.pingpong.PingPong.*;
+import static com.example.pingpong.Game.*;
 
-public class Texts {
+public class GameText {
 
     public static void drawPlayerScore(){
         playerScoreText = new Text();
@@ -31,10 +31,30 @@ public class Texts {
         startText = new Text();
         startText.setText("PRESS SPACE TO PLAY!");
         startText.setFont(Font.font("Impact", 30));
-        startText.setFill(Color.WHITE);
-        startText.setX((gameWindow.getWidth() / 2));
-        startText.setY(gameWindow.getHeight() / 2);
+        startText.setFill(Color.ORANGE);
+        startText.setX((gameWindow.getWidth() / 2) + 10);
+        startText.setY((gameWindow.getHeight() - 20));
         startText.setVisible(true);
+
+    }
+
+    public static void drawPauseText(){
+        pauseText = new Text();
+        pauseText.setText("PAUSED");
+        pauseText.setFont(Font.font("Impact", 30));
+        pauseText.setFill(Color.ORANGE);
+        pauseText.setX((gameWindow.getWidth() / 2) - 50);
+        pauseText.setY(35);
+        pauseText.setVisible(false);
+
+    }
+
+    public static void drawWinLoseText(){
+        winLoseText = new Text();
+        winLoseText.setFont(Font.font("Impact", 30));
+        winLoseText.setFill(Color.ORANGE);
+        winLoseText.setX((gameWindow.getWidth() / 4) + 70);
+        winLoseText.setY((gameWindow.getHeight() - 20));
 
     }
 

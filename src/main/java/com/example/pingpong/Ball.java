@@ -3,8 +3,7 @@ package com.example.pingpong;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-
-import static com.example.pingpong.PingPong.*;
+import static com.example.pingpong.Game.*;
 
 public class Ball {
 
@@ -18,7 +17,7 @@ public class Ball {
     }
 
     public static void respawnBall(){
-        ball.setCenterX((gameWindow.getWidth() / 2));
+        ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
     }
 
@@ -44,8 +43,6 @@ public class Ball {
             /*if(ball.getCenterY() >= player.getY() + (player.getHeight() / 2) - 10 && ball.getCenterY() <= player.getY() + player.getHeight()/2 + 10){
                 ballSpeedX = -ballSpeedX;
             }*/
-
-
         }
 
         if(ball.getCenterX() <= enemy.getWidth() + gap){
@@ -59,9 +56,6 @@ public class Ball {
             ballSpeedY = -ballSpeedY;
 
         }
-
-
-
     }
 
     public static void drawMiddleLine(){
@@ -70,7 +64,7 @@ public class Ball {
         middleLine.setWidth(10);
         middleLine.setX((gameWindow.getWidth() / 2) - middleLine.getWidth());
 
-        middleLine.setFill(Color.WHITE);
+        middleLine.setFill(Color.CYAN);
     }
 
 

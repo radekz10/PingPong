@@ -2,7 +2,7 @@ package com.example.pingpong;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import static com.example.pingpong.PingPong.*;
+import static com.example.pingpong.Game.*;
 
 public class Player {
 
