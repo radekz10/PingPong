@@ -54,7 +54,7 @@ public class GameText {
         winLoseText.setFont(Font.font("Impact", 30));
         winLoseText.setFill(Color.ORANGE);
         winLoseText.setX((gameWindow.getWidth() / 4) + 70);
-        winLoseText.setY((gameWindow.getHeight() - 20));
+        winLoseText.setY((35));
 
     }
 

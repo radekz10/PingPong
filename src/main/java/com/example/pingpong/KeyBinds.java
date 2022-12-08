@@ -12,7 +12,7 @@ public class KeyBinds{
       });
   }
 
-  public static void keyBindingW(){
+  /*public static void keyBindingW(){
       gameWindow.setOnKeyPressed(keyEvent -> {
           if (keyEvent.getCode() == KeyCode.W){
               player.setY(player.getY() - 30);
@@ -26,7 +26,7 @@ public class KeyBinds{
               player.setY(player.getY() + 30);
           }
       });
-  }
+  }*/
 
     public static void keyBindingSpace(){
         gameWindow.setOnKeyPressed(keyEvent -> {

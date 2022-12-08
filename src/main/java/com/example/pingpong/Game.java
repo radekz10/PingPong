@@ -83,8 +83,6 @@ public class Game {
     public static void startGame(){
 
         mouseMove();
-        keyBindingW();
-        keyBindingS();
         keyBindingPause();
 
         startText.setVisible(false);

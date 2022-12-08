@@ -17,11 +17,19 @@ public class Ball {
     }
 
     public static void respawnBall(){
-        ball.setCenterX((gameWindow.getWidth() / 2) - 5);
+        ball.setCenterX((gameWindow.getWidth() / 2));
         ball.setCenterY((gameWindow.getHeight() / 2));
 
-        ballSpeedX = 3;
-        ballSpeedY = 1;
+        if (playerScore > enemyScore){
+            ballSpeedX = 3;
+            ballSpeedY = 1;
+        }
+        if (enemyScore > playerScore){
+            ballSpeedX = 3;
+            ballSpeedY = -1;
+        }
+
+
 
     }
 
