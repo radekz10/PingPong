@@ -17,8 +17,10 @@ public class Ball {
     }
 
     public static void respawnBall(){
-        ball.setCenterX((gameWindow.getWidth() / 2));
+        ball.setRadius(10);
+        ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
+        hitCombo = 0;
 
         if (playerScore > enemyScore){
             ballSpeedX = 3;
@@ -29,8 +31,6 @@ public class Ball {
             ballSpeedY = -1;
         }
 
-
-
     }
 
     public static void checkBallPosition(){
@@ -38,20 +38,22 @@ public class Ball {
         //score
         if (ball.getCenterX() < 0){
             playerScore++;
-            playerScoreText.setText("Player Score : " + playerScore);
+            playerScoreText.setText("" + playerScore);
             respawnBall();
         }
 
         if (ball.getCenterX() > gameWindow.getWidth()){
             enemyScore++;
-            enemyScoreText.setText("Enemy Score : " + enemyScore);
+            enemyScoreText.setText("" + enemyScore);
             respawnBall();
         }
 
         //player hit
         if(ball.getCenterX() >= gameWindow.getWidth() - player.getWidth() - gap){
+
             if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getY() + player.getHeight()){
                 ballSpeedX = -ballSpeedX;
+                hitCombo++;
             }
             if(ball.getCenterY() >= player.getY() + (player.getHeight() / 2) - 15 && ball.getCenterY() <= player.getY() + player.getHeight()/2 + 15){
                 ballSpeedX = ballSpeedX - 1.3;
@@ -65,8 +67,10 @@ public class Ball {
         }
         //enemy hit
         if(ball.getCenterX() <= enemy.getWidth() + gap) {
+
             if (ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getY() + player.getHeight()) {
                 ballSpeedX = -ballSpeedX;
+                hitCombo++;
             }
             if (ball.getCenterY() >= enemy.getY() + (enemy.getHeight() / 2) - 15 && ball.getCenterY() <= enemy.getY() + enemy.getHeight() / 2 + 15) {
                 ballSpeedX = ballSpeedX - 1.3;
@@ -77,14 +81,29 @@ public class Ball {
             if(ball.getCenterY() >= enemy.getHeight() / 2 && ball.getCenterY() <= enemy.getHeight()){
                 ballSpeedY = ballSpeedY - 1;
             }
-
         }
 
         //ground hit
-        if (ball.getCenterY() == gameWindow.getHeight() || ball.getCenterY() == 0) {
+        if (ball.getCenterY() >= gameWindow.getHeight() || ball.getCenterY() <= 0) {
             ballSpeedY = -ballSpeedY;
 
         }
+    }
+
+    public static void increaseBallSize(){
+
+        double ballHalf = ball.getRadius() / 2;
+        if(hitCombo >= 8 && hitCombo <= 15){
+            ball.setRadius(20);
+
+        }
+        else if(hitCombo >= 16 && hitCombo <= 20){
+            ball.setRadius(5);
+        }
+        else {
+            ball.setRadius(10);
+        }
+
     }
 
     public static void drawMiddleLine(){

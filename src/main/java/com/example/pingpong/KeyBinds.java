@@ -1,6 +1,8 @@
 package com.example.pingpong;
 
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
+
 import static com.example.pingpong.Game.*;
 
 public class KeyBinds{
@@ -34,13 +36,21 @@ public class KeyBinds{
                 started = true;
             }
         });
+    }
 
+    public static void keyBindingMenuSpace(){
+        gameWindow.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.SPACE){
+                menuStarted = true;
+            }
+        });
     }
 
     public static void keyBindingPause(){
         gameWindow.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.P){
                 pauseText.setVisible(true);
+                gameWindow.setFill(Color.STEELBLUE);
                 gameLoop.pause();
             }
             if (keyEvent.getCode() == KeyCode.SPACE){

@@ -14,7 +14,7 @@ public class PingPong extends Application {
     public void start(Stage stage){
         root = new Group();
         gameWindow = new Scene(root,1400,700);
-        gameWindow.setFill(Color.ROYALBLUE);
+        //gameWindow.setFill(Color.ROYALBLUE);
 
         stage.setTitle("2D PingPong");
         stage.setScene(gameWindow);
