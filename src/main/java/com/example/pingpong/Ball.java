@@ -16,7 +16,7 @@ public class Ball {
         ball.setCenterY((gameWindow.getHeight() / 2));
         ball.setRadius(10);
         ball.setStroke(Color.DARKBLUE);
-        ball.setStrokeWidth(2);
+        ball.setStrokeWidth(1);
 
         ball.setFill(Color.ORANGE);
     }
