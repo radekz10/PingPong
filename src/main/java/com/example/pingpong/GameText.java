@@ -71,6 +71,17 @@ public class GameText {
 
     }
 
+    public static void drawCombo(){
+        comboHitText = new Text();
+        comboHitText.setText("x" + hitCombo);
+        comboHitText.setFont(Font.font(font, fontSize));
+        comboHitText.setFill(Color.CYAN);
+        comboHitText.setX(gameWindow.getWidth() - 50);
+        comboHitText.setY(gameWindow.getHeight() - 2);
+        comboHitText.setVisible(true);
+
+    }
+
     public static void playerWin(){
 
         winLoseText.setText("YOU ARE THE WINNER!");

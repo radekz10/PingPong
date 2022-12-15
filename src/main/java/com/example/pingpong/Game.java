@@ -58,6 +58,7 @@ public class Game {
     public static Text pauseText;
     public static Text winLoseText;
     public static Text spaceToPlayText;
+    public static Text comboHitText;
 
     public static Group root;
     public static Scene gameWindow;
@@ -76,9 +77,11 @@ public class Game {
 
         drawPlayerScore();
         drawEnemyScore();
+        drawCombo();
         drawStartText();
         drawPauseText();
         drawWinLoseText();
+
 
         gameLoop = new Timeline(new KeyFrame(Duration.millis(3), arg -> {
 
@@ -95,7 +98,7 @@ public class Game {
         gameLoop.play();
 
         root.getChildren().addAll(player, enemy, ball, middleLine, playerScoreText, enemyScoreText, startText, pauseText,
-                winLoseText);
+                winLoseText, comboHitText);
     }
 
     public static void startGame(){
