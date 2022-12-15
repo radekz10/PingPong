@@ -3,6 +3,9 @@ package com.example.pingpong;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+
+import java.util.Random;
+
 import static com.example.pingpong.Game.*;
 
 public class Ball {
@@ -22,11 +25,17 @@ public class Ball {
         ball.setCenterY((gameWindow.getHeight() / 2));
         hitCombo = 0;
 
-        if (playerScore > enemyScore){
+        random = new Random();
+
+        int random_num = random.nextInt(100);
+
+        System.out.println(random_num);
+
+        if (random_num >= 50){
             ballSpeedX = 3;
             ballSpeedY = 1;
         }
-        if (enemyScore > playerScore){
+        if (random_num < 50){
             ballSpeedX = 3;
             ballSpeedY = -1;
         }
@@ -103,6 +112,26 @@ public class Ball {
         else {
             ball.setRadius(10);
         }
+        if (hitCombo > 21){
+            hitCombo = 0;
+        }
+
+        /*random = new Random();
+
+        int random_num = random.nextInt(100);
+
+        System.out.println(random_num);
+
+
+        if(hitCombo % 5 == 0){
+            ball.setRadius(20);
+        }
+        else if(hitCombo % 2 == 0){
+            ball.setRadius(5);
+        }
+        else {
+            ball.setRadius(10);
+        }*/
 
     }
 

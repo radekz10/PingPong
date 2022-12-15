@@ -10,6 +10,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.util.Random;
+
 import static com.example.pingpong.Ball.*;
 import static com.example.pingpong.Enemy.drawEnemy;
 import static com.example.pingpong.Enemy.enemyMove;
@@ -38,6 +40,8 @@ public class Game {
     //public static boolean gameLoop = true;
     public static boolean menuStarted;
     public static boolean started;
+
+    public static Random random;
 
     public static Rectangle player;
     public static Rectangle enemy;
