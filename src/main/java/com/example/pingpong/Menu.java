@@ -8,10 +8,8 @@ import static com.example.pingpong.GameText.drawSpaceToPlay;
 public class Menu {
 
     public static void drawMenu(){
-
             if(menuStarted){
                 game();
-
             }
             else {
                 gameWindow.setFill(Color.STEELBLUE);
@@ -20,7 +18,5 @@ public class Menu {
                 spaceToPlayText.setVisible(true);
                 KeyBinds.keyBindingMenuSpace();
             }
-
-
     }
 }

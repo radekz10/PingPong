@@ -30,6 +30,14 @@ public class KeyBinds{
         });
     }
 
+    public static void keyBindingQuitGame(){
+        gameWindow.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == KeyCode.X){
+                System.exit(0);
+            }
+        });
+    }
+
     public static void keyBindingPause(){
         gameWindow.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.P){

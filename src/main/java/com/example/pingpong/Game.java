@@ -2,6 +2,7 @@ package com.example.pingpong;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -64,6 +65,7 @@ public class Game {
     public static void game(){
 
         gameWindow.setFill(Color.STEELBLUE);
+        gameWindow.setCursor(Cursor.NONE);
 
         drawPlayer();
         drawEnemy();
@@ -101,10 +103,10 @@ public class Game {
         gameWindow.setFill(Color.ROYALBLUE);
         mouseMove();
         keyBindingPause();
+        keyBindingQuitGame();
 
         startText.setVisible(false);
         winLoseText.setVisible(false);
-
 
         ball.setCenterX(ball.getCenterX() + ballSpeedX);
         ball.setCenterY(ball.getCenterY() + ballSpeedY);

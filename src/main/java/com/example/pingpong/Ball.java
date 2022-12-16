@@ -17,6 +17,7 @@ public class Ball {
         ball.setRadius(10);
         ball.setStroke(Color.LIGHTCORAL);
         ball.setStrokeWidth(1);
+        //ball.setOpacity(0.7);
 
         ball.setFill(Color.ORANGE);
     }
@@ -41,7 +42,7 @@ public class Ball {
         }
         if (random_num > 25 && random_num <= 50){
             ballSpeedX = 3;
-            ballSpeedY = -1;
+            ballSpeedY = -0.75;
         }
         if (random_num > 51 && random_num <= 75){
             ballSpeedX = 3;
