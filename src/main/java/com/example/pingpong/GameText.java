@@ -3,13 +3,24 @@ package com.example.pingpong;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+
+import static com.example.pingpong.Ball.hitCombo;
+import static com.example.pingpong.Enemy.enemyScore;
 import static com.example.pingpong.Game.*;
+import static com.example.pingpong.Player.playerScore;
 
 public class GameText {
 
+    public static Text playerScoreText;
+    public static Text enemyScoreText;
+    public static Text startText;
+    public static Text pauseText;
+    public static Text winLoseText;
+    public static Text spaceToPlayText;
+    public static Text comboHitText;
+
     public static void drawPlayerScore(){
         playerScoreText = new Text();
-        //playerScoreText.setText("Player Score : " + playerScore);
         playerScoreText.setText("" + playerScore);
         playerScoreText.setFont(Font.font(font, bigFontSize));
         playerScoreText.setFill(Color.WHITE);
@@ -22,7 +33,6 @@ public class GameText {
 
     public static void drawEnemyScore(){
         enemyScoreText = new Text();
-        //enemyScoreText.setText("Enemy Score : " + enemyScore);
         enemyScoreText.setText("" + enemyScore);
         enemyScoreText.setFont(Font.font(font, bigFontSize));
         enemyScoreText.setFill(Color.WHITE);

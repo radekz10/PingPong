@@ -6,6 +6,9 @@ import static com.example.pingpong.Game.*;
 
 public class Player {
 
+    public static Rectangle player;
+    public static int playerScore = 0;
+
     public static void drawPlayer(){
 
         player = new Rectangle();

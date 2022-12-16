@@ -6,9 +6,24 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
 
+import static com.example.pingpong.Enemy.enemy;
+import static com.example.pingpong.Enemy.enemyScore;
 import static com.example.pingpong.Game.*;
+import static com.example.pingpong.GameText.*;
+import static com.example.pingpong.Player.player;
+import static com.example.pingpong.Player.playerScore;
 
 public class Ball {
+
+    public static Circle ball;
+    public static Rectangle middleLine;
+
+    public static Random random;
+
+    public static double ballSpeedX = 5;
+    public static double ballSpeedY = 1;
+
+    public static int hitCombo = 0;
 
     public static void drawBall(){
         ball = new Circle();
@@ -124,8 +139,7 @@ public class Ball {
 
     public static void ballSize(){
 
-        double ballHalf = ball.getRadius() / 2;
-        if(hitCombo >= 8 && hitCombo <= 15){
+        /*if(hitCombo >= 8 && hitCombo <= 15){
             ball.setRadius(20);
 
         }
@@ -137,15 +151,15 @@ public class Ball {
         }
         if (hitCombo > 21){
             hitCombo = 0;
-        }
+        }*/
 
         System.out.println(hitCombo);
 
-        /*random = new Random();
+        random = new Random();
 
-        int random_num = random.nextInt(100);
+        int randomNum = random.nextInt(100);
 
-        System.out.println(random_num);
+        System.out.println(randomNum);
 
 
         if(hitCombo % 5 == 0){
@@ -156,7 +170,7 @@ public class Ball {
         }
         else {
             ball.setRadius(10);
-        }*/
+        }
 
     }
 

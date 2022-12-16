@@ -2,9 +2,17 @@ package com.example.pingpong;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+import static com.example.pingpong.Ball.ball;
 import static com.example.pingpong.Game.*;
 
 public class Enemy {
+
+    public static Rectangle enemy;
+
+    public static int enemyScore = 0;
+
+    public static final double enemySpeed = 1;
 
     public static void drawEnemy(){
         enemy = new Rectangle();
