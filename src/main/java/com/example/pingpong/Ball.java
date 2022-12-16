@@ -15,8 +15,8 @@ public class Ball {
         ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
         ball.setRadius(10);
-        ball.setStroke(Color.DARKBLUE);
-        ball.setStrokeWidth(2);
+        ball.setStroke(Color.LIGHTCORAL);
+        ball.setStrokeWidth(1);
 
         ball.setFill(Color.ORANGE);
     }
@@ -25,6 +25,7 @@ public class Ball {
         ball.setRadius(10);
         ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
+
         hitCombo = 0;
         comboHitText.setText("x" + hitCombo);
 
@@ -120,7 +121,7 @@ public class Ball {
         }
     }
 
-    public static void increaseBallSize(){
+    public static void ballSize(){
 
         double ballHalf = ball.getRadius() / 2;
         if(hitCombo >= 8 && hitCombo <= 15){

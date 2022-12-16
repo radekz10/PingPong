@@ -14,22 +14,6 @@ public class KeyBinds{
       });
   }
 
-  /*public static void keyBindingW(){
-      gameWindow.setOnKeyPressed(keyEvent -> {
-          if (keyEvent.getCode() == KeyCode.W){
-              player.setY(player.getY() - 30);
-          }
-      });
-  }
-
-  public static void keyBindingS(){
-      gameWindow.setOnKeyPressed(keyEvent -> {
-          if (keyEvent.getCode() == KeyCode.S){
-              player.setY(player.getY() + 30);
-          }
-      });
-  }*/
-
     public static void keyBindingSpace(){
         gameWindow.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.SPACE){
@@ -58,8 +42,23 @@ public class KeyBinds{
                 gameLoop.play();
             }
         });
-
     }
+
+      /*public static void keyBindingW(){
+      gameWindow.setOnKeyPressed(keyEvent -> {
+          if (keyEvent.getCode() == KeyCode.W){
+              player.setY(player.getY() - 30);
+          }
+      });
+  }
+
+  public static void keyBindingS(){
+      gameWindow.setOnKeyPressed(keyEvent -> {
+          if (keyEvent.getCode() == KeyCode.S){
+              player.setY(player.getY() + 30);
+          }
+      });
+  }*/
 
 
 }
