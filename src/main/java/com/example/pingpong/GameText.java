@@ -16,7 +16,6 @@ public class GameText {
     public static Text startText;
     public static Text pauseText;
     public static Text winLoseText;
-    public static Text spaceToPlayText;
     public static Text comboHitText;
 
     public static void drawPlayerScore(){
@@ -80,19 +79,6 @@ public class GameText {
 
     }
 
-    public static void drawSpaceToPlay(){
-        spaceToPlayText = new Text();
-        spaceToPlayText.setText("PRESS SPACE TO PLAY!");
-        spaceToPlayText.setFont(Font.font(font, bigFontSize));
-        spaceToPlayText.setFill(Color.ORANGE);
-        spaceToPlayText.setStroke(Color.LIGHTCORAL);
-        spaceToPlayText.setStrokeWidth(1);
-        spaceToPlayText.setX(gameWindow.getWidth() / 2);
-        spaceToPlayText.setY(gameWindow.getHeight() / 2);
-        spaceToPlayText.setVisible(true);
-
-    }
-
     public static void drawCombo(){
         comboHitText = new Text();
         comboHitText.setText("x" + hitCombo);
@@ -124,7 +110,6 @@ public class GameText {
         resetGame();
 
     }
-
 }
 
 

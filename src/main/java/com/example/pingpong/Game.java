@@ -17,14 +17,12 @@ import static com.example.pingpong.Player.*;
 public class Game {
 
     public static final int gap = 5;
-
     public static final int maxScore = 5;
 
     public static final String font = "Impact";
     public static final int fontSize = 30;
     public static final int bigFontSize = 65;
 
-    public static boolean menuStarted;
     public static boolean started;
 
     public static Group root;

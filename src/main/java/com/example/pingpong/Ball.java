@@ -38,6 +38,7 @@ public class Ball {
     }
 
     public static void respawnBall(){
+
         ball.setRadius(10);
         ball.setCenterX((gameWindow.getWidth() / 2) - 5);
         ball.setCenterY((gameWindow.getHeight() / 2));
@@ -46,7 +47,6 @@ public class Ball {
         comboHitText.setText("x" + hitCombo);
 
         random = new Random();
-
         int random_num = random.nextInt(100);
 
         System.out.println(random_num);
@@ -67,15 +67,6 @@ public class Ball {
             ballSpeedX = 3;
             ballSpeedY = -0.6;
         }
-        /*if (random_num > 100 && random_num <= 125){
-            ballSpeedX = 3;
-            ballSpeedY = 0.35;
-        }
-        if (random_num > 125){
-            ballSpeedX = 3;
-            ballSpeedY = -0.35;
-        }*/
-
     }
 
     public static void checkBallPosition(){
@@ -94,6 +85,7 @@ public class Ball {
         }
 
         //player hit
+        //if (player.intersects(ball.getBoundsInLocal()))
         if(ball.getCenterX() >= gameWindow.getWidth() - player.getWidth() - gap){
 
             if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getY() + player.getHeight()){
@@ -111,7 +103,9 @@ public class Ball {
                 ballSpeedY = ballSpeedY - 1;
             }
         }
+
         //enemy hit
+        //if (enemy.intersects(ball.getBoundsInLocal()))
         if(ball.getCenterX() <= enemy.getWidth() + gap) {
 
             if (ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getY() + player.getHeight()) {
@@ -133,34 +127,12 @@ public class Ball {
         //ground hit
         if (ball.getCenterY() >= gameWindow.getHeight() || ball.getCenterY() <= 0) {
             ballSpeedY = -ballSpeedY;
-
         }
     }
 
     public static void ballSize(){
 
-        /*if(hitCombo >= 8 && hitCombo <= 15){
-            ball.setRadius(20);
-
-        }
-        else if(hitCombo >= 16 && hitCombo <= 20){
-            ball.setRadius(5);
-        }
-        else {
-            ball.setRadius(10);
-        }
-        if (hitCombo > 21){
-            hitCombo = 0;
-        }*/
-
         System.out.println(hitCombo);
-
-        random = new Random();
-
-        int randomNum = random.nextInt(100);
-
-        System.out.println(randomNum);
-
 
         if(hitCombo % 5 == 0){
             ball.setRadius(20);
@@ -184,6 +156,4 @@ public class Ball {
 
         middleLine.setFill(Color.CYAN);
     }
-
-
 }
