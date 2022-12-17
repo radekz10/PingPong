@@ -49,7 +49,7 @@ public class Ball {
         random = new Random();
         int random_num = random.nextInt(100);
 
-        System.out.println(random_num);
+        //System.out.println(random_num);
 
         if (random_num <= 25){
             ballSpeedX = 3;
@@ -132,7 +132,7 @@ public class Ball {
 
     public static void ballSize(){
 
-        System.out.println(hitCombo);
+        //System.out.println(hitCombo);
 
         if(hitCombo % 5 == 0){
             ball.setRadius(20);

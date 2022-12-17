@@ -6,6 +6,7 @@ import javafx.scene.paint.Color;
 import static com.example.pingpong.Game.*;
 import static com.example.pingpong.GameText.pauseText;
 import static com.example.pingpong.Player.player;
+import static com.example.pingpong.Ball.middleLine;
 
 public class KeyBinds{
 
@@ -29,10 +30,12 @@ public class KeyBinds{
             if (keyEvent.getCode() == KeyCode.P){
                 pauseText.setVisible(true);
                 gameWindow.setFill(Color.STEELBLUE);
+                middleLine.setOpacity(0.05);
                 gameLoop.pause();
             }
             if (keyEvent.getCode() == KeyCode.SPACE){
                 pauseText.setVisible(false);
+                middleLine.setOpacity(1);
                 gameLoop.play();
             }
             if (keyEvent.getCode() == KeyCode.X){

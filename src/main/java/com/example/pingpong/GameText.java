@@ -13,7 +13,8 @@ public class GameText {
 
     public static Text playerScoreText;
     public static Text enemyScoreText;
-    public static Text startText;
+    public static Text bindsText;
+    public static Text spaceText;
     public static Text pauseText;
     public static Text winLoseText;
     public static Text comboHitText;
@@ -42,16 +43,29 @@ public class GameText {
         enemyScoreText.setVisible(true);
     }
 
-    public static void drawStartText(){
-        startText = new Text();
-        startText.setText("P - PAUSE GAME | PRESS SPACE TO PLAY! ");
-        startText.setFont(Font.font(font, fontSize));
-        startText.setFill(Color.ORANGE);
-        startText.setStroke(Color.LIGHTCORAL);
-        startText.setStrokeWidth(1);
-        startText.setX((gameWindow.getWidth() / 2) - 195);
-        startText.setY((gameWindow.getHeight() - 20));
-        startText.setVisible(true);
+    public static void drawBindsText(){
+        bindsText = new Text();
+        bindsText.setText("P - PAUSE GAME | X - EXIT GAME");
+        bindsText.setFont(Font.font(font, fontSize));
+        bindsText.setFill(Color.ORANGE);
+        bindsText.setStroke(Color.LIGHTCORAL);
+        bindsText.setStrokeWidth(1);
+        bindsText.setX((gameWindow.getWidth() / 2) - 195);
+        bindsText.setY((gameWindow.getHeight() - 20));
+        bindsText.setVisible(true);
+
+    }
+
+    public static void drawSpaceText(){
+        spaceText = new Text();
+        spaceText.setText("PRESS SPACE TO PLAY!");
+        spaceText.setFont(Font.font(font, fontSize));
+        spaceText.setFill(Color.ORANGE);
+        spaceText.setStroke(Color.LIGHTCORAL);
+        spaceText.setStrokeWidth(1);
+        spaceText.setX((gameWindow.getWidth() / 3) + 100);
+        spaceText.setY((30));
+        spaceText.setVisible(true);
 
     }
 
@@ -62,8 +76,8 @@ public class GameText {
         pauseText.setFill(Color.ORANGE);
         pauseText.setStroke(Color.LIGHTCORAL);
         pauseText.setStrokeWidth(1);
-        pauseText.setX((gameWindow.getWidth() / 2) + 5);
-        pauseText.setY(30);
+        pauseText.setX((gameWindow.getWidth() / 2) - 50);
+        pauseText.setY((gameWindow.getHeight() / 2));
         pauseText.setVisible(false);
 
     }
@@ -74,8 +88,8 @@ public class GameText {
         winLoseText.setFill(Color.ORANGE);
         winLoseText.setStroke(Color.LIGHTCORAL);
         winLoseText.setStrokeWidth(1);
-        winLoseText.setX((gameWindow.getWidth() / 4) + 70);
-        winLoseText.setY((30));
+        winLoseText.setX((gameWindow.getWidth() / 3) + 100);
+        winLoseText.setY((gameWindow.getHeight() / 4));
 
     }
 
@@ -95,18 +109,22 @@ public class GameText {
     public static void playerWin(){
 
         winLoseText.setText("YOU ARE THE WINNER!");
-        winLoseText.setX((gameWindow.getWidth() / 2) + 5);
+        winLoseText.setX((gameWindow.getWidth() / 3) + 100);
+        winLoseText.setY((gameWindow.getHeight() / 4));
         winLoseText.setVisible(true);
-        startText.setVisible(true);
+        bindsText.setVisible(true);
+        spaceText.setVisible(true);
         resetGame();
     }
 
     public static void enemyWin(){
 
         winLoseText.setText("ENEMY IS THE WINNER!");
-        winLoseText.setX((gameWindow.getWidth() / 4) + 70);
+        winLoseText.setX((gameWindow.getWidth() / 3) + 100);
+        winLoseText.setY((gameWindow.getHeight() / 4));
         winLoseText.setVisible(true);
-        startText.setVisible(true);
+        bindsText.setVisible(true);
+        spaceText.setVisible(true);
         resetGame();
 
     }

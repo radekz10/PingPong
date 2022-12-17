@@ -35,16 +35,19 @@ public class Game {
         gameWindow.setFill(Color.STEELBLUE);
         gameWindow.setCursor(Cursor.NONE);
 
+
         drawPlayer();
         drawEnemy();
 
         drawMiddleLine();
+        middleLine.setOpacity(0.05);
         drawBall();
 
         drawPlayerScore();
         drawEnemyScore();
         drawCombo();
-        drawStartText();
+        drawBindsText();
+        drawSpaceText();
         drawPauseText();
         drawWinLoseText();
 
@@ -62,17 +65,19 @@ public class Game {
         gameLoop.setCycleCount(Timeline.INDEFINITE);
         gameLoop.play();
 
-        root.getChildren().addAll(player, enemy, ball, middleLine, playerScoreText, enemyScoreText, startText, pauseText,
-                winLoseText, comboHitText);
+        root.getChildren().addAll(player, enemy, ball, middleLine, playerScoreText, enemyScoreText, bindsText, pauseText,
+                spaceText,winLoseText, comboHitText);
     }
 
     public static void startGame(){
 
         gameWindow.setFill(Color.ROYALBLUE);
+        middleLine.setOpacity(1);
         mouseMove();
         keyBindingPause();
 
-        startText.setVisible(false);
+        bindsText.setVisible(false);
+        spaceText.setVisible(false);
         winLoseText.setVisible(false);
 
         ball.setCenterX(ball.getCenterX() + ballSpeedX);
@@ -109,7 +114,8 @@ public class Game {
 
         playerScoreText.setText("" + playerScore);
         enemyScoreText.setText("" + enemyScore);
-        winLoseText.setX((gameWindow.getWidth() / 4) + 70);
+        winLoseText.setX((gameWindow.getWidth() / 3) + 100);
+        winLoseText.setY((gameWindow.getHeight() / 4));
 
         player.setX(gameWindow.getWidth() - player.getWidth() - gap);
         player.setY((gameWindow.getHeight() / 2) - (player.getHeight() / 2));
@@ -118,6 +124,8 @@ public class Game {
         enemy.setY((gameWindow.getHeight() / 2) - (enemy.getHeight() / 2));
 
         ball.setRadius(10);
+
+        middleLine.setOpacity(0.05);
 
         gameLoop.pause();
 
