@@ -16,14 +16,14 @@ import static com.example.pingpong.Player.*;
 
 public class Game {
 
-    public static final int gap = 5;
-    public static final int maxScore = 5;
+    public static final int GAP = 5;
+    public static final int MAX_SCORE = 5;
 
-    public static final String font = "Impact";
-    public static final int fontSize = 30;
-    public static final int bigFontSize = 65;
+    public static final String FONT = "Impact";
+    public static final int FONT_SIZE = 30;
+    public static final int BIG_FONT_SIZE = 65;
 
-    public static boolean started;
+    public static boolean STARTED;
 
     public static Group root;
     public static Scene gameWindow;
@@ -34,7 +34,6 @@ public class Game {
 
         gameWindow.setFill(Color.STEELBLUE);
         gameWindow.setCursor(Cursor.NONE);
-
 
         drawPlayer();
         drawEnemy();
@@ -86,7 +85,7 @@ public class Game {
     }
 
     public static void checkGameStart(){
-            if(started){
+            if(STARTED){
             startGame();
         }
             else {
@@ -95,11 +94,11 @@ public class Game {
     }
 
     public static void gameScore(){
-        if(playerScore == maxScore || enemyScore == maxScore){
-            if (playerScore == maxScore){
+        if(playerScore == MAX_SCORE || enemyScore == MAX_SCORE){
+            if (playerScore == MAX_SCORE){
                 playerWin();
             }
-            if (enemyScore == maxScore){
+            if (enemyScore == MAX_SCORE){
                 enemyWin();
             }
         }
@@ -117,10 +116,10 @@ public class Game {
         winLoseText.setX((gameWindow.getWidth() / 3) + 100);
         winLoseText.setY((gameWindow.getHeight() / 4));
 
-        player.setX(gameWindow.getWidth() - player.getWidth() - gap);
+        player.setX(gameWindow.getWidth() - player.getWidth() - GAP);
         player.setY((gameWindow.getHeight() / 2) - (player.getHeight() / 2));
 
-        enemy.setX((gameWindow.getWidth() - gameWindow.getWidth()) + gap);
+        enemy.setX((gameWindow.getWidth() - gameWindow.getWidth()) + GAP);
         enemy.setY((gameWindow.getHeight() / 2) - (enemy.getHeight() / 2));
 
         ball.setRadius(10);

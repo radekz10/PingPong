@@ -22,7 +22,7 @@ public class GameText {
     public static void drawPlayerScore(){
         playerScoreText = new Text();
         playerScoreText.setText("" + playerScore);
-        playerScoreText.setFont(Font.font(font, bigFontSize));
+        playerScoreText.setFont(Font.font(FONT, BIG_FONT_SIZE));
         playerScoreText.setFill(Color.WHITE);
         playerScoreText.setStroke(Color.CYAN);
         playerScoreText.setStrokeWidth(2);
@@ -34,7 +34,7 @@ public class GameText {
     public static void drawEnemyScore(){
         enemyScoreText = new Text();
         enemyScoreText.setText("" + enemyScore);
-        enemyScoreText.setFont(Font.font(font, bigFontSize));
+        enemyScoreText.setFont(Font.font(FONT, BIG_FONT_SIZE));
         enemyScoreText.setFill(Color.WHITE);
         enemyScoreText.setStroke(Color.CYAN);
         enemyScoreText.setStrokeWidth(2);
@@ -46,7 +46,7 @@ public class GameText {
     public static void drawBindsText(){
         bindsText = new Text();
         bindsText.setText("P - PAUSE GAME | X - EXIT GAME");
-        bindsText.setFont(Font.font(font, fontSize));
+        bindsText.setFont(Font.font(FONT, FONT_SIZE));
         bindsText.setFill(Color.ORANGE);
         bindsText.setStroke(Color.LIGHTCORAL);
         bindsText.setStrokeWidth(1);
@@ -59,7 +59,7 @@ public class GameText {
     public static void drawSpaceText(){
         spaceText = new Text();
         spaceText.setText("PRESS SPACE TO PLAY!");
-        spaceText.setFont(Font.font(font, fontSize));
+        spaceText.setFont(Font.font(FONT, FONT_SIZE));
         spaceText.setFill(Color.ORANGE);
         spaceText.setStroke(Color.LIGHTCORAL);
         spaceText.setStrokeWidth(1);
@@ -72,7 +72,7 @@ public class GameText {
     public static void drawPauseText(){
         pauseText = new Text();
         pauseText.setText("PAUSED");
-        pauseText.setFont(Font.font(font, fontSize));
+        pauseText.setFont(Font.font(FONT, FONT_SIZE));
         pauseText.setFill(Color.ORANGE);
         pauseText.setStroke(Color.LIGHTCORAL);
         pauseText.setStrokeWidth(1);
@@ -84,7 +84,7 @@ public class GameText {
 
     public static void drawWinLoseText(){
         winLoseText = new Text();
-        winLoseText.setFont(Font.font(font, fontSize));
+        winLoseText.setFont(Font.font(FONT, FONT_SIZE));
         winLoseText.setFill(Color.ORANGE);
         winLoseText.setStroke(Color.LIGHTCORAL);
         winLoseText.setStrokeWidth(1);
@@ -96,7 +96,7 @@ public class GameText {
     public static void drawCombo(){
         comboHitText = new Text();
         comboHitText.setText("x" + hitCombo);
-        comboHitText.setFont(Font.font(font, fontSize));
+        comboHitText.setFont(Font.font(FONT, FONT_SIZE));
         comboHitText.setFill(Color.CYAN);
         comboHitText.setStroke(Color.ANTIQUEWHITE);
         comboHitText.setStrokeWidth(1);

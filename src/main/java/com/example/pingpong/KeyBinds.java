@@ -20,7 +20,7 @@ public class KeyBinds{
     public static void keyBindingSpace(){
         gameWindow.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode() == KeyCode.SPACE){
-                started = true;
+                STARTED = true;
             }
         });
     }

@@ -14,7 +14,7 @@ public class Player {
         player = new Rectangle();
         player.setHeight(130);
         player.setWidth(20);
-        player.setX(gameWindow.getWidth() - player.getWidth() - gap);
+        player.setX(gameWindow.getWidth() - player.getWidth() - GAP);
         player.setY((gameWindow.getHeight() / 2) - (player.getHeight() / 2));
         player.setArcWidth(50.0);
         player.setArcHeight(20.0);

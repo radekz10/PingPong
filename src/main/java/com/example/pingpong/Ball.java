@@ -86,7 +86,7 @@ public class Ball {
 
         //player hit
         //if (player.intersects(ball.getBoundsInLocal()))
-        if(ball.getCenterX() >= gameWindow.getWidth() - player.getWidth() - gap){
+        if(ball.getCenterX() >= gameWindow.getWidth() - player.getWidth() - GAP){
 
             if(ball.getCenterY() >= player.getY() && ball.getCenterY() <= player.getY() + player.getHeight()){
                 ballSpeedX = -ballSpeedX;
@@ -106,7 +106,7 @@ public class Ball {
 
         //enemy hit
         //if (enemy.intersects(ball.getBoundsInLocal()))
-        if(ball.getCenterX() <= enemy.getWidth() + gap) {
+        if(ball.getCenterX() <= enemy.getWidth() + GAP) {
 
             if (ball.getCenterY() >= enemy.getY() && ball.getCenterY() <= enemy.getY() + player.getHeight()) {
                 ballSpeedX = -ballSpeedX;
